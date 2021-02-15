@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de teste VamosLaOnibus">
+    <title>@ViewData["Title"] - VamosLaOnibus</title>
+
+    <!--<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+        //Function to reload page for design
+        //setTimeout(function () { document.location.reload(true); }, 1000);
+
+
+        //Show message to user.
+        function messagemShow(value) {
+
+            if (value != null) {
+
+                var myModal = document.getElementById('modalmessagem');
+                myModal.focus;
+
+                //if (value.hasOwnProperty('title')) {
+                //    document.getElementById('modalmessage_label').innerText = value['title'];
+                //}
+                //else {
+                //    document.getElementById('modalmessage_label').innerText = '';
+                //}
+
+                //if (value.hasOwnProperty('messagem')) {
+                //    document.getElementById('modalmessage_text').innerText = value['messagem'];
+                //    //document.getElementById('modalmessagem').focus()
+                //    $("#modal_messagem").show();
+                //}
+            }
+        }
+
+        function findTrip() {
+            let msg = {
+                title: 'Erro',
+                messagem: 'Valor nulo a ser ennviado.',
+            };
+
+            //messagemShow(msg);
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top topnavbar">
+            <div class="container-fluid">
+                <label class="navbar-brand mb-0 h1">VamosLaOnibus</label>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 120px;">
+
+        <div class="container marketing">
+
+            <div class="row row-cols-lg-auto g-3 align-items-center baner">
+
+                <div class="mb-3">
+                    <label class="form-label label-color">Data de Partida</label>
+                    <input type="date" class="form-control" id="filter_date">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label label-color">Classe</label>
+                    <select class="form-control" id="filter_class">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label label-color">Valor Máximo</label>
+                    <input type="text" class="form-control" placeholder="R$" id="filter_value">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">&nbsp;</label>
+                    <button type="submit" class="form-control btn button-color" data-bs-toggle="modal" onclick="findTrip();">Consultar</button>
+                </div>
+
+                <div class="mb-3 baner-image">
+                    <img src="Image/BanerBus.png" height="180" />
+                </div>
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette">
+                <div class="col-md-10 order-md-2">
+                    <h2 class="featurette-heading">
+                        Oh yeah, it’s that good.
+                        <span class="text-muted">See for yourself.</span>
+                    </h2>
+                    <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+                </div>
+                <div class="col-md-2 order-md-1">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" src="Image/Comapany/cometa.png" focusable="false">
+                </div>
+            </div>
+
+        </div><!-- /.container -->
+
+    </main>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalmessagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalmessage_label"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalmessage_text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--@RenderBody()
+
+    @RenderSection("Scripts", required: false)-->
+    <!--<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>-->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

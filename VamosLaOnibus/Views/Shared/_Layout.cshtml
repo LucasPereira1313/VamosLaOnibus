@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pagina de teste VamosLaOnibus">
+    <title>@ViewData["Title"]</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+       //Function to reload page for design
+       //setTimeout(function () { document.location.reload(true); }, 1000);
+
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top topnavbar">
+            <div class="container-fluid">
+                <label class="navbar-brand mb-0 h1">@ViewData["Title"]</label>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 120px;">
+
+        @RenderBody()
+
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalmessagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalmessage_label"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalmessage_text">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+</body>
+</html>

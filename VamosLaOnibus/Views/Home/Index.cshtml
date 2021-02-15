@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Vamos Lá Ônibus";
+}
+
+@section Scripts{
+    <script src="~/js/site.js"></script>
+
+    <script type="text/javascript">
+
+        var dataA = {
+            method: 'GET',
+            url: '/api/Trip/GetStart',
+            command: function (response) {
+                loadPage(response);
+            },
+        };
+
+
+        var dataB = {
+            method: 'GET',
+            url: '/api/Trip/GetBusClass',
+            command: function (response) {
+                loadDropdown(response);
+            },
+        };
+
+        requestApi(dataA);
+        requestApi(dataB);
+
+    </script>
+
+}
+
+<div class="container marketing">
+
+    <div class="row row-cols-lg-auto g-3 align-items-center baner">
+
+        <div class="mb-3">
+            <label class="form-label label-color">Data de Partida</label>
+            <input type="date" class="form-control" id="filter_date" value="2021-01-01">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label label-color">Classe</label>
+            <select class="form-control" id="filter_class">
+                <option selected>Choose...</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label label-color">Valor Máximo</label>
+            <input type="text" class="form-control" placeholder="R$" id="filter_value">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">&nbsp;</label>
+            <button type="submit" class="form-control btn button-color" onclick="findTrip();">Consultar</button>
+        </div>
+
+        <div class="mb-3 baner-image">
+            <img src="Image/BanerBus.png" height="180" />
+        </div>
+
+    </div>
+
+    <div id="content">
+
+    </div>
+
+</div>
